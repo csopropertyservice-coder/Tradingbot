@@ -684,7 +684,7 @@ async function runDebugScan(){
       const htfTrend=HC[HC.length-1]>htfE21&&htfE21>htfE50?'BULLISH':HC[HC.length-1]<htfE21&&htfE21<htfE50?'BEARISH':'MIXED';
       const entryTrend=e8>e21&&e21>e50?'BULLISH':e8<e21&&e21<e50?'BEARISH':'MIXED';
       log(`  Price: ${price.toFixed(5)}`,'var(--text)');
-      log(`  Market Mode: ${adxVal>20?'TREND':'RANGE'} (ADX=${adxVal.toFixed(1)})',(adxVal>20?'var(--win)':'var(--warn)'));
+      log('  Market Mode: '+(adxVal>20?'TREND (ADX='+adxVal.toFixed(1)+' trending)':'RANGE (ADX='+adxVal.toFixed(1)+' ranging)'),(adxVal>20?'var(--win)':'var(--warn)'));
       log(`  Entry Trend: ${entryTrend} | HTF Trend: ${htfTrend}`,entryTrend===htfTrend?'var(--win)':'var(--warn)');
       log(`  RSI: ${rsiVal.toFixed(1)} ${rsiVal>70?'⚠ OVERBOUGHT':rsiVal<30?'⚠ OVERSOLD':'✓ clear'}`,rsiVal>70||rsiVal<30?'var(--warn)':'var(--win)');
       log(`  ADX: ${adxVal.toFixed(1)} ${adxVal>20?'✓ trending':'⚠ ranging/weak'}`,adxVal>20?'var(--win)':'var(--warn)');
